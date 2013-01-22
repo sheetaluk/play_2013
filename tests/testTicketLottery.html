@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Ticket Lottery Tests</title>
+ 
+    <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.10.0.css" />
+    <script src="http://code.jquery.com/qunit/qunit-1.10.0.js"></script>
+    <script src="../js/play/ticketLottery.js"></script>
+    <script>
+      test("testing MyProbabilityObj.getProbability", function() {
+        function testGetProbability(inputString, expected) {
+          equal(MyProbabilityObj.getProbability(inputString), expected);
+        }
+        testGetProbability("100 10 2 1", "0.10000000000000002");
+        testGetProbability("100 10 2 2", "0.19090909090909094");
+        testGetProbability("10 10 5 1", "1");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="qunit"></div>
+  </body>
+</html>
